@@ -8,24 +8,27 @@
    
     <!-- FORM -->
     <!-- pass in the variable if our form is valid or invalid -->
-    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+    <form name="userForm" ng-submit="submitForm(userForm)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
 
         <!-- NAME -->
         <div class="form-group">
             <label>Name</label>
-            <input type="text" name="name" class="form-control" ng-model="name" required>
+            <input type="text" name="name" class="form-control" ng-model="user.name" required>
+            <div ng-show="fullNameErrMesg">Name filed can't be blank</div>
         </div>
 
         <!-- USERNAME -->
         <div class="form-group">
             <label>Username</label>
-            <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
+            <input type="text" name="username" class="form-control" ng-model="user.username" required ng-minlength="3" ng-maxlength="8">
+            <div ng-show="userNameErrMesg">Username filed can't be blank</div>
         </div>
         
         <!-- EMAIL -->
         <div class="form-group">
             <label>Email</label>
-            <input type="email" name="email" class="form-control" ng-model="email">
+            <input type="email" name="email" class="form-control" ng-model="user.email" required>
+            <div ng-show="emailAddErrMesg">Email filed can't be blank</div>
         </div>
         
         <!-- SUBMIT BUTTON -->

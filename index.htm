@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="myApp">
+<html lang="en-us">
     <head>
         <title>AngularJS Physician Directory</title>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -30,10 +30,9 @@
 			</nav>
 		</header>
 
-        <div class="container">
-
+ <!--        place ng-app only from where angular bootstrap is needed, You have added at html but from html no event and any angular stuff is here so It would be unnecessary to place ng-app in body or html, Unless we do something inside body by angular  -->
+        <div class="container" ng-app="physicialCore">
             <div ng-view></div>
-
 		</div>
 
     </body>
